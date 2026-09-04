@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Day 1</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Day 1</h1>
+
+    <script>
+        const prices = [500, 1200, 750, 2500, 3000];
+
+        let itemNumber = 1;
+
+        for (const price of prices) {
+            if (price > 1000) {
+                console.log(`Item ${itemNumber} is over ₹1,000: ₹${price}`);
+            }
+
+            itemNumber++;
+        }
+    </script>
+
+</body>
+</html>

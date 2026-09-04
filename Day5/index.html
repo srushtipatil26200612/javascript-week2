@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - Asynchronous JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Asynchronous JavaScript</h1>
+
+    <button onclick="getData()">Start API Call</button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+  
+        function delayedApiCall() {
+
+            return new Promise((resolve, reject) => {
+
+                setTimeout(() => {
+
+                    const success = true;
+
+                    if (success) {
+                        resolve("API data received successfully!");
+                    } else {
+                        reject("API call failed!");
+                    }
+
+                }, 2000);
+
+            });
+        }
+
+
+        async function getData() {
+
+            const resultElement = document.getElementById("result");
+
+            try {
+
+                resultElement.textContent = "Loading...";
+
+                const result = await delayedApiCall();
+
+                resultElement.textContent = result;
+
+            } catch (error) {
+
+                resultElement.textContent = "Error: " + error;
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
