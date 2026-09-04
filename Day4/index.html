@@ -42,25 +42,25 @@
         ];
 
 
-        // forEach()
+       
         products.forEach(product => {
             console.log("Product:", product.name);
         });
 
 
-        // map()
+       
         const productNames = products.map(product => product.name);
 
         console.log("Product Names:", productNames);
 
 
-        // filter()
+       
         const cheapProducts = products.filter(product => product.price < 1000);
 
         console.log("Cheap Products:", cheapProducts);
 
 
-        // filter() + map()
+       
         const cheapProductNames = products
             .filter(product => product.price < 1000)
             .map(product => product.name);
@@ -68,7 +68,7 @@
         console.log("Cheap Product Names:", cheapProductNames);
 
 
-        // reduce()
+       
         const total = products.reduce((sum, product) => {
             return sum + product.price;
         }, 0);
@@ -76,17 +76,17 @@
         console.log("Total Price:", total);
 
 
-        // find()
+      
         const laptop = products.find(product => product.name === "Laptop");
 
         console.log("Laptop:", laptop);
 
 
-        // Optional Chaining
+      
         console.log("Laptop Category:", laptop?.category);
 
 
-        // Template Literal
+      
         console.log(`There are ${products.length} products.`);
 
     </script>
